@@ -23,7 +23,7 @@ build_src() {
 
 build_module() {
   if [ -z "$1" ]; then
-    TARGETS="esm es5"
+    TARGETS="esm"
   else
     TARGETS=$*
   fi
