@@ -1,7 +1,9 @@
-const typescriptConfigs = require('@typescript-eslint/eslint-plugin').configs;
+/** @typedef {import('./get-eslint-config')} types */
+
+import {configs as typescriptConfigs} from '@typescript-eslint/eslint-plugin';
 
 const DEFAULT_OPTIONS = {
-  react: false
+  react: undefined
 };
 
 const DEFAULT_CONFIG = {
@@ -145,10 +147,12 @@ function getReactConfig(options) {
   };
 }
 
-module.exports.getESLintConfig = function getESLintConfig(options) {
+/** @type {types['getESLintConfig']} */
+export function getESLintConfig(options = {}) {
   options = {...DEFAULT_OPTIONS, ...options};
   let config = DEFAULT_CONFIG;
   if (options.react) {
+    // @ts-expect-error TODO fix typing
     config = {...config, ...getReactConfig(options)};
   }
 

@@ -1,6 +1,6 @@
 // Registers an alias for this module
-const {resolve} = require('path');
-const fs = require('fs');
+import {resolve}from 'path';
+import fs from 'fs';
 
 function getModuleInfo(path) {
   if (fs.lstatSync(path).isDirectory()) {
@@ -40,7 +40,7 @@ function getSubmodules(packageRoot) {
   return submodules;
 }
 
-function getAliases(mode = 'src', packageRoot = process.env.PWD) {
+export function getAliases(mode = 'src', packageRoot = process.env.PWD) {
   const aliases = {};
   const submodules = getSubmodules(packageRoot);
 
@@ -57,5 +57,3 @@ function getAliases(mode = 'src', packageRoot = process.env.PWD) {
 
   return aliases;
 }
-
-module.exports = getAliases;

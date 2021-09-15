@@ -1,3 +1,5 @@
+/** @typedef {import('./get-prettier-config')} types */
+
 const DEFAULT_CONFIG = {
   printWidth: 100,
   semi: true,
@@ -6,7 +8,8 @@ const DEFAULT_CONFIG = {
   bracketSpacing: false
 };
 
-module.exports.getPrettierConfig = function getPrettierConfig(options) {
+/** @type {types['getPrettierConfig']} */
+export function getPrettierConfig(options) {
   const config = DEFAULT_CONFIG;
   return config;
 };

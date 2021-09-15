@@ -76,7 +76,7 @@ const ENV_CONFIG = {
 ENV_CONFIG.development = ENV_CONFIG.es5;
 
 /** @type {types['getBabelConfig']} */
-module.exports.getBabelConfig = function getBabelConfig(api, options = {}) {
+export function getBabelConfig(api, options = {}) {
   api.cache.using(() => process.env.BABEL_ENV);
   const config = {...DEFAULT_CONFIG, ...ENV_CONFIG[api.env()]};
   config.presets = config.presets || [];

@@ -1,11 +1,12 @@
-/* @typedef {import('./get-ocular-config')} default */
+/* @typedef {import('./get-ocular-config')} types */
 
-const fs = require('fs');
-const {resolve} = require('path');
-const getAliases = require('../../node/aliases');
-const {shallowMerge} = require('../utils/utils');
+import fs from 'fs';
+import {resolve} from 'path';
+import getAliases from '../../node/aliases';
+import {shallowMerge} from '../utils/utils';
 
-module.exports.getOcularConfig = function getOcularConfig(options = {}) {
+// /** @type {types['getOcularConfig']} */
+export function getOcularConfig(options = {}) {
   const packageRoot = options.root || process.env.PWD;
 
   const IS_MONOREPO = fs.existsSync(resolve(packageRoot, './modules'));

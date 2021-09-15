@@ -1,5 +1,5 @@
-const test = require('tape');
-const {tapeEquals, tapeEqualsEpsilon} = require('./tape-assertions');
+import test from 'tape';
+import {tapeEquals, tapeEqualsEpsilon} from './tape-assertions';
 
 class TestCase {
   constructor(t, result) {

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 const altPath = process.argv[2];
 
 let executablePath = getExecutablePath();

@@ -1,12 +1,12 @@
 // Launch script for various Node test configurations
 
 // Enables ES2015 import/export in Node.js
-const {resolve} = require('path');
+import {resolve} from 'path';
 
 // Register module aliases
-const moduleAlias = require('module-alias');
+import moduleAlias from 'module-alias';
 
-const {getOcularConfig} = require('../src/helpers/get-ocular-config');
+import {getOcularConfig} from '../src/helpers/get-ocular-config';
 
 // Browser test is opt-in by installing @probe.gl/test-utils
 let BrowserTestDriver = null;
