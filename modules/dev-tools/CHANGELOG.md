@@ -1,5 +1,9 @@
 # CHANGELOG (ocular-dev-tools)
 
+## v2.0.0-alpha.3
+
+- [dev-tools] edge case handling and more flexible configs (#406)
+
 ## v2.0.0-alpha.2
 
 - Try fix missing Chromium error
